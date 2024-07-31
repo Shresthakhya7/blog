@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <h1>Edit Post</h1>
+  <div class="form-wrapper">
+    <form action="/edit/<%= id %>" method="POST" enctype="multipart/form-data">
+      <input type="text" name="title" value="<%= post.title %>" required>
+      <input type="file" name="image" accept="image/*">
+      <textarea name="description" required><%= post.description %></textarea>
+      <input type="text" name="category" placeholder="Category" value="<%= post.category %>" required>
+      <button type="submit" class="button">Update</button>
+    </form>
+  </div>
+</body>
+</html>
